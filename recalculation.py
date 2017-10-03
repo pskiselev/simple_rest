@@ -20,7 +20,7 @@ def brcor(k, center, R):
 
 
 # Пересчет точки из кривого кадра в прямой
-def recalc(point, center, k=-0.27):
+def recalc(point, center, k=-0.305):
     x = point[0]
     y = point[1]
 
@@ -70,3 +70,22 @@ def scale(point, width=105, height=68):
     scaled_point = point / dimension_pixels * dimension_meters
     normalized_point = np.array([scaled_point[0] - width / 2, height - scaled_point[1]])
     return np.around(normalized_point, decimals=1)
+
+
+def get_bias(bottom_point, center, hg):
+    top_point = top_projection(bottom_point, center, hg)
+    return scale(top_point)
+
+
+def distance(p1, p2):
+    return np.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]))
+
+
+def speed(time1, time2, distance2):
+    t = time2 - time1
+    return distance2 / t if t > 0 else 0.0
+
+
+def acceleration(time1, speed1, time2, speed2):
+    t = time2 - time1
+    return (speed2 - speed1) / t if t > 0 else 0.0

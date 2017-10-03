@@ -1,0 +1,80 @@
+Exception on /api/v1.0/calc_track [POST]
+Traceback (most recent call last):
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python35\lib\site-packages\flask_httpauth.py", line 93, in decorated
+    return f(*args, **kwargs)
+  File "C:/Users/pab/PycharmProjects/restful/app.py", line 236, in calc_track
+    points = StreamPoints(response)
+  File "C:\Users\pab\PycharmProjects\restful\src\StreamPoints.py", line 49, in __init__
+    float(data['pos_x_recalc']),
+TypeError: float() argument must be a string or a number, not 'NoneType'
+Exception on /api/v1.0/calc_track [POST]
+Traceback (most recent call last):
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python35\lib\site-packages\flask_httpauth.py", line 93, in decorated
+    return f(*args, **kwargs)
+  File "C:/Users/pab/PycharmProjects/restful/app.py", line 238, in calc_track
+    points.sort(key=lambda x: x.time)
+AttributeError: 'StreamPoints' object has no attribute 'sort'
+Exception on /api/v1.0/calc_track [POST]
+Traceback (most recent call last):
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python35\lib\site-packages\flask_httpauth.py", line 93, in decorated
+    return f(*args, **kwargs)
+  File "C:/Users/pab/PycharmProjects/restful/app.py", line 238, in calc_track
+    points.sort(key=lambda x: x.time)
+AttributeError: 'StreamPoints' object has no attribute 'sort'
+Exception on /api/v1.0/calc_track [POST]
+Traceback (most recent call last):
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python35\lib\site-packages\flask_httpauth.py", line 93, in decorated
+    return f(*args, **kwargs)
+  File "C:/Users/pab/PycharmProjects/restful/app.py", line 280, in calc_track
+    distance = StreamPoints.distance(p_prev, p)
+  File "C:\Users\pab\PycharmProjects\restful\src\StreamPoints.py", line 56, in distance
+    return np.sqrt((p1.pos_x_recalc - p2.pos_x_recalc) ** 2 + (p1.pos_y_recalc - p2.pos_y_recalc))
+AttributeError: 'Point' object has no attribute 'pos_x_recalc'

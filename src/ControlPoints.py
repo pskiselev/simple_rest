@@ -44,8 +44,13 @@ class ControlPoints:
 
         return res_time
 
-    def get_points(self, timecode):
-        n_t = self.near_time(timecode)
+    def near_time_by_sec(self, sec):
+        timecode = str(datetime.timedelta(seconds=sec))
+        return self.near_time(timecode)
+
+
+    def get_points(self, sec):
+        n_t = self.near_time_by_sec(sec)
         top_left = list(filter(lambda p: p.video_timecode == n_t and p.c_mileage_datatype == 2, self.list))[0]
         top_left = np.array([top_left.x, top_left.y])
 

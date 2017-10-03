@@ -4,7 +4,8 @@ import numpy as np
 class Point:
 
     def __init__(self, id, match_id, team_id, player_id, period, video_part, pos_x, pos_y,
-                 pos_x_recalc, pos_y_recalc, time, c_mileage_event, player2_id, speed):
+                 # pos_x_recalc, pos_y_recalc,
+                 time, c_mileage_event, player2_id, speed):
         self.id = id
         self.match_id = match_id
         self.team_id = team_id
@@ -13,8 +14,8 @@ class Point:
         self.video_part = video_part
         self.pos_x = pos_x
         self.pos_y = pos_y
-        self.pos_x_recalc = pos_x_recalc
-        self.pos_y_recalc = pos_y_recalc
+        # self.pos_x_recalc = pos_x_recalc
+        # self.pos_y_recalc = pos_y_recalc
         self.time = time
         self.speed = speed
         self.c_mileage_event = c_mileage_event
@@ -22,8 +23,8 @@ class Point:
 
 
     def __repr__(self):
-        return "id = " + str(self.id) + " match_id = " + str(self.match_id) +\
-               " pos_x_recalc = " + str(self.pos_x_recalc) + " pos_y_recalc = " + str(self.pos_y_recalc)
+        return "id = " + str(self.id) + " match_id = " + str(self.match_id) + " time = " + str(self.time)
+               # " pos_x_recalc = " + str(self.pos_x_recalc) + " pos_y_recalc = " + str(self.pos_y_recalc)
 
 
 class StreamPoints:
@@ -32,6 +33,7 @@ class StreamPoints:
         self.list = np.ndarray((len(resp['data']),), dtype=np.object)
         i = 0
         for data in resp['data']:
+
             point = Point(data['id'],
                           data['match_id'],
                           data['team_id'],
@@ -40,8 +42,8 @@ class StreamPoints:
                           data['video_part'],
                           data['pos_x'],
                           data['pos_y'],
-                          float(data['pos_x_recalc']),
-                          float(data['pos_y_recalc']),
+                          # float(data['pos_x_recalc']),
+                          # float(data['pos_y_recalc']),
                           data['video_second'],
                           data['c_mileage_event_id'],
                           data['player2_id'],
